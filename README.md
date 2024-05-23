@@ -1,0 +1,2 @@
+# LaLa-wordspace
+スッキリjavaのためのワークスペース
