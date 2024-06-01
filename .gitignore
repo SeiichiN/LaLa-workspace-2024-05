@@ -49,6 +49,7 @@ replay_pid*
 !jstl-api-1.2.jar
 !jstl-impl-1.2.jar
 
-sukkiri_java_jissen_2
+jstl_sample/
+sample/
 
 # End of https://www.toptal.com/developers/gitignore/api/java,eclipse
