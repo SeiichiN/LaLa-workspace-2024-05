@@ -1,0 +1,12 @@
+package birdland;
+
+public class SwimFlyBird extends Bird {
+	
+	public void swim() {
+		System.out.println(this.name + "はスイスイ泳ぐ");
+	}
+	
+	public void fly() {
+		System.out.println(this.name + "はバサバサ飛ぶ");
+	}
+}

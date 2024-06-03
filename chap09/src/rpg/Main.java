@@ -1,19 +1,19 @@
 package rpg;
 
+// p345
 public class Main {
 
 	public static void main(String[] args) {
-		Sword s = new Sword();
-		s.name = "炎の剣";
-		s.damage = 10;
+		Hero h1 = new Hero("ミナト");
 		
-		Hero h = new Hero();
-		h.name = "ミナト";
-		h.hp = 100;
-		h.sword = s;
+		Hero h2 = new Hero("アサカ");
 		
-		System.out.println("現在の武器は" + h.sword.name);
-		h.attack();
+		Wizard w = new Wizard("スガワラ");
+		
+		w.heal(h1);
+		w.heal(h2);
+		w.heal(h2);
+		
 	}
 
 }
