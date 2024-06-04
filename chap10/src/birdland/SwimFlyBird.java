@@ -2,6 +2,10 @@ package birdland;
 
 public class SwimFlyBird extends Bird {
 	
+	public SwimFlyBird(String name) {
+		super(name);
+	}
+	
 	public void swim() {
 		System.out.println(this.name + "はスイスイ泳ぐ");
 	}
