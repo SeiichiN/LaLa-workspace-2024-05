@@ -11,6 +11,6 @@ public class RubberDuck extends Toy {
 	}
 	
 	public void say() {
-		System.out.println("キューキュー");
+		System.out.println(this.name + "はキューキューと鳴く");
 	}
 }
