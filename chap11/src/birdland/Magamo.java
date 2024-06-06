@@ -1,7 +1,7 @@
 package birdland;
 
 public class Magamo extends Bird
-                     implements Flying, Swimming {
+                      implements Flying, Swimming {
 	
 	public Magamo(String name) {
 		super(name);
@@ -21,6 +21,6 @@ public class Magamo extends Bird
 	@Override
 	public void swim() {
 		System.out.println(this.name + "はスイスイ泳ぐ");
-		
 	}
+
 }

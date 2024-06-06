@@ -1,10 +1,11 @@
 package monster;
 
-public class Goblin {
-	String name = "ゴブリン";
-	
-	public void attack(Hero h) {
-		System.out.println(this.name + "の攻撃!");
-		System.out.println(h.name + "に10ポイントのダメージ");
+public class Goblin extends WalkingMonster {
+
+	@Override
+	public void attack() {
+		System.out.println("ナイフで斬りつける");
+		
 	}
+
 }

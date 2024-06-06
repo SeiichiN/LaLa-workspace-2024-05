@@ -15,6 +15,5 @@ public class Aigamo extends Bird
 	@Override
 	public void swim() {
 		System.out.println(this.name + "はスイスイ泳ぐ");
-		
 	}
 }

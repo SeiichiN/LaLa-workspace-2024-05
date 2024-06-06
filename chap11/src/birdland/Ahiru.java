@@ -11,10 +11,9 @@ public class Ahiru extends Bird
 	public void say() {
 		System.out.println(this.name + "はガーガー鳴く");
 	}
-	
-	@Override
-	public void swim() {
-		System.out.println(this.name + "はスイスイ泳ぐ");
-	}
 
+	//	@Override
+//	public void swim() {
+//		System.out.println(this.name + "はスイスイ泳ぐ");
+//	}
 }
