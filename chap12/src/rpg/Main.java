@@ -3,11 +3,19 @@ package rpg;
 public class Main {
 
 	public static void main(String[] args) {
-		Wizard w = new Wizard();
+		// Character c = new Wizard();
+		Character c = new Hero();
 		Matango m = new Matango();
-		w.name = "アサカ";
-		w.attack(m);
-		w.fireball(m);
+
+		if (c instanceof Wizard) { // c == Wizard
+			Wizard w = (Wizard) c;			
+			w.name = "アサカ";
+			w.attack(m);
+			w.fireball(m);
+		} else {
+			c.attack(m);
+		}
+
 
 	}
 
