@@ -3,15 +3,33 @@ package rpg.characters;
 import rpg.monsters.Matango;
 
 public class Hero {
-	private int hp;
+	private int hp = 100;
 	private String name = "ミナト";
 	private Sword sword;
+	
+	public int getHp() { return this.hp; }
+	public Sword getSword() { return this.sword; }
+	
+	public void setHp(int hp) { this.hp = hp; }
+	public void setSword(Sword sword) { this.sword = sword; }
 	
 	public String getName() {
 		return this.name;
 	}
 	
 	public void setName(String name) {
+		if (name == null) {
+			throw new IllegalArgumentException
+			  ("名前がnullである。処理を中断");
+		}
+		if (name.length() <= 1) {
+			throw new IllegalArgumentException
+			  ("名前が短すぎる。処理を中断");
+		}
+		if (name.length() >= 8) {
+			throw new IllegalArgumentException
+			  ("名前が長すぎる。処理を中断");
+		}
 		this.name = name;
 	}
 	

@@ -1,5 +1,7 @@
 package rpg.monsters;
 
+import rpg.characters.Hero;
+
 public class Matango {
 	private int hp = 50;
 	private char suffix;
@@ -20,9 +22,9 @@ public class Matango {
 		this.suffix = suffix;
 	}
 	
-	public void attack() {
+	public void attack(Hero h) {
 		System.out.println("キノコ" + this.suffix + "の攻撃");
-		System.out.println("10のダメージ");
+		System.out.println(h.getName() + "に10のダメージ");
 	}
 
 	public void run() {
