@@ -7,6 +7,7 @@ public class Matango extends Monster {
 
 	public Matango(String type) {
 		super(type);
+		this.poison = new Poison("毒液");
 	}
 
 	@Override

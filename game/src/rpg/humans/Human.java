@@ -8,6 +8,7 @@ public abstract class Human {
 	
 	public Human(String name) {
 		this.name = name;
+		this.hp = 100;
 	}
 	public abstract void attack(Monster m);
 	
@@ -23,5 +24,7 @@ public abstract class Human {
 		return name;
 	}
 	
-	
+	public String toString() {
+		return this.name + ": " + this.hp;
+	}
 }

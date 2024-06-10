@@ -7,6 +7,7 @@ public class Goblin extends Monster {
 
 	public Goblin(String type) {
 		super(type);
+		this.damage = 5;
 	}
 
 	@Override

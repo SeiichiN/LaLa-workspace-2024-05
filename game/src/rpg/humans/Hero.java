@@ -7,6 +7,7 @@ public class Hero extends Human {
 
 	public Hero(String name) {
 		super(name);
+		this.sword = new Sword("炎の剣", 15);
 	}
 
 	@Override

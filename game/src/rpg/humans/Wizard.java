@@ -7,6 +7,7 @@ public class Wizard extends Human {
 
 	public Wizard(String name) {
 		super(name);
+		this.wand = new Wand("魔法の杖", 15);
 	}
 
 	@Override

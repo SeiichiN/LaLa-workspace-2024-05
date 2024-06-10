@@ -6,6 +6,7 @@ public class Poison {
 	
 	public Poison(String name) {
 		this.name = name;
+		this.damage = 10;
 	}
 
 	public int getDamage() {

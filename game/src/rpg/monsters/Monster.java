@@ -8,6 +8,7 @@ public abstract class Monster {
 	
 	public Monster(String type) {
 		this.type = type;
+		this.hp = 100;
 	}
 	
 	public abstract void attack(Human h);
@@ -23,5 +24,9 @@ public abstract class Monster {
 	public String getType() {
 		return type;
 	}
-	
+
+	public String toString() {
+		return this.type + ": " + this.hp;
+	}
+
 }
