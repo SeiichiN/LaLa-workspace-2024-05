@@ -12,10 +12,16 @@ public class Hero extends Human {
 
 	@Override
 	public void attack(Monster m) {
-		System.out.println(m.getType() + "への攻撃");
-		System.out.println
-		  (this.sword.getDamage() + "のダメージを与えた");
-		m.setHp(m.getHp() - this.sword.getDamage());
+		if (!this.isLiving()) {
+			return;
+		}
+		if (m.isLiving()) {
+			System.out.println(m.getType() + "への攻撃");
+			System.out.println(this.sword.getDamage() + "のダメージを与えた");
+			m.setHp(m.getHp() - this.sword.getDamage());
+		} else {
+			System.out.println(m.getType() + "はもう死んでいる");
+		}
 	}
 
 	public Sword getSword() {

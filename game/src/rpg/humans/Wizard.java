@@ -12,10 +12,15 @@ public class Wizard extends Human {
 
 	@Override
 	public void attack(Monster m) {
-		System.out.println(m.getType() + "への攻撃");
-		System.out.println 
-		  (this.wand.getDamage() + "のダメージを与えた");
-		m.setHp(m.getHp() - this.wand.getDamage());
+		if (!this.isLiving()) { return; }
+		if (m.isLiving()) {
+			System.out.println(m.getType() + "への攻撃");
+			System.out.println 
+			  (this.wand.getDamage() + "のダメージを与えた");
+			m.setHp(m.getHp() - this.wand.getDamage());
+		} else {
+			System.out.println(m.getType() + "はもう死んでいる");
+		}
 	}
 
 	public Wand getWand() {

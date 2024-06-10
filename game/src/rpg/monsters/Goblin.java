@@ -12,9 +12,14 @@ public class Goblin extends Monster {
 
 	@Override
 	public void attack(Human h) {
-		System.out.println(h.getName() + "への攻撃");
-		System.out.println(this.getDamage() + "のダメージを与えた");
-		h.setHp(h.getHp() - this.getDamage());
+		if (!this.isLiving()) { return; }
+		if (h.isLiving()) {
+			System.out.println(h.getName() + "への攻撃");
+			System.out.println(this.getDamage() + "のダメージを与えた");
+			h.setHp(h.getHp() - this.getDamage());
+		} else {
+			System.out.println(h.getName() + "はもう死んでいる");
+		}
 		
 	}
 

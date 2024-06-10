@@ -12,10 +12,15 @@ public class Matango extends Monster {
 
 	@Override
 	public void attack(Human h) {
-		System.out.println(h.getName() + "への毒攻撃");
-		System.out.println
-		  (this.poison.getDamage() + "のダメージを与えた");
-		h.setHp(h.getHp() - this.poison.getDamage());
+		if (!this.isLiving()) { return; }
+		if (h.isLiving()) {
+			System.out.println(h.getName() + "への毒攻撃");
+			System.out.println
+			  (this.poison.getDamage() + "のダメージを与えた");
+			h.setHp(h.getHp() - this.poison.getDamage());
+		} else {
+			System.out.println(h.getName() + "はもう死んでいる");
+		}
 	}
 
 	public Poison getPoison() {
