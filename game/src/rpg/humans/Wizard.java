@@ -4,21 +4,19 @@ import java.util.Random;
 
 import rpg.monsters.Monster;
 
-public class Hero extends Human {
-	private Sword sword;
+public class Wizard extends Human {
+	private Wand wand;
 
-	public Hero(String name) {
+	public Wizard(String name) {
 		super(name);
-		this.sword = new Sword("炎の剣", 15);
+		this.wand = new Wand("魔法の杖", 15);
 	}
 
 	@Override
 	public void attack(Monster m) {
-		if (!this.isLiving()) {
-			return;
-		}
+		if (!this.isLiving()) { return; }
 		if (m.isLiving()) {
-			int damage = new Random().nextInt(this.sword.getDamage());
+			int damage = new Random().nextInt(this.wand.getDamage());
 			System.out.println(m.getType() + "への攻撃");
 			System.out.println(damage + "のダメージを与えた");
 			m.setHp(m.getHp() - damage);
@@ -27,12 +25,12 @@ public class Hero extends Human {
 		}
 	}
 
-	public Sword getSword() {
-		return sword;
+	public Wand getWand() {
+		return wand;
 	}
 
-	public void setSword(Sword sword) {
-		this.sword = sword;
+	public void setWand(Wand wand) {
+		this.wand = wand;
 	}
 
 }
