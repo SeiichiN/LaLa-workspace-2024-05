@@ -1,5 +1,7 @@
 package rpg.humans;
 
+import java.util.Random;
+
 import rpg.monsters.Monster;
 
 public class Wizard extends Human {
@@ -14,10 +16,10 @@ public class Wizard extends Human {
 	public void attack(Monster m) {
 		if (!this.isLiving()) { return; }
 		if (m.isLiving()) {
+			int damage = new Random().nextInt(this.wand.getDamage());
 			System.out.println(m.getType() + "への攻撃");
-			System.out.println 
-			  (this.wand.getDamage() + "のダメージを与えた");
-			m.setHp(m.getHp() - this.wand.getDamage());
+			System.out.println(damage + "のダメージを与えた");
+			m.setHp(m.getHp() - damage);
 		} else {
 			System.out.println(m.getType() + "はもう死んでいる");
 		}

@@ -3,14 +3,21 @@ package main;
 import java.util.Random;
 import java.util.Scanner;
 
-public class GamePlayer {
+import rpg.humans.Human;
+import rpg.monsters.Monster;
+
+public class MovePlayer {
 	private int xpos;
 	private int ypos;
 	private boolean gameover;
 	private GoblinPosition goblinPos;
 	private MatangoPosition matangoPos;
+	private Monster[] monsters;
+	private Human[] humans;
 
-	public GamePlayer() {
+	public MovePlayer(Human[] humans, Monster[] monsters) {
+		this.humans = humans;
+		this.monsters = monsters;
 		this.xpos = new Random().nextInt(5);
 		this.ypos = new Random().nextInt(5);
 		this.gameover = false;
@@ -49,6 +56,8 @@ public class GamePlayer {
 		String mons = findMonster();
 		if (mons != null) {
 			System.out.println(mons + "が現れた!!");
+			Monster m = null;
+			Fight fight = new Fight(humans, )
 		}
 	}
 

@@ -1,5 +1,7 @@
 package rpg.humans;
 
+import java.util.Random;
+
 import rpg.monsters.Monster;
 
 public class Hero extends Human {
@@ -16,9 +18,10 @@ public class Hero extends Human {
 			return;
 		}
 		if (m.isLiving()) {
+			int damage = new Random().nextInt(this.sword.getDamage());
 			System.out.println(m.getType() + "への攻撃");
-			System.out.println(this.sword.getDamage() + "のダメージを与えた");
-			m.setHp(m.getHp() - this.sword.getDamage());
+			System.out.println(damage + "のダメージを与えた");
+			m.setHp(m.getHp() - damage);
 		} else {
 			System.out.println(m.getType() + "はもう死んでいる");
 		}

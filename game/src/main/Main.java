@@ -17,7 +17,7 @@ public class Main {
 		humans[0] = new Hero("ミナト");
 		humans[1] = new Wizard("アサカ");
 		
-		Fight fight = new Fight(humans, monsters);
+		FightAll fight = new FightAll(humans, monsters);
 		fight.play();
 	}
 	

@@ -1,5 +1,7 @@
 package rpg.monsters;
 
+import java.util.Random;
+
 import rpg.humans.Human;
 
 public class Matango extends Monster {
@@ -14,10 +16,10 @@ public class Matango extends Monster {
 	public void attack(Human h) {
 		if (!this.isLiving()) { return; }
 		if (h.isLiving()) {
+			int damage = new Random().nextInt(this.poison.getDamage());
 			System.out.println(h.getName() + "への毒攻撃");
-			System.out.println
-			  (this.poison.getDamage() + "のダメージを与えた");
-			h.setHp(h.getHp() - this.poison.getDamage());
+			System.out.println(damage + "のダメージを与えた");
+			h.setHp(h.getHp() - damage);
 		} else {
 			System.out.println(h.getName() + "はもう死んでいる");
 		}

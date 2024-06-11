@@ -6,42 +6,45 @@ import java.util.Scanner;
 import rpg.humans.Human;
 import rpg.monsters.Monster;
 
-public class Fight {
-	private Monster monster;
+public class FightAll {
+	private Monster[] monsters = new Monster[2];
 	private Human[] humans = new Human[2];
-
-	public Fight(Human[] humans, Monster monster) {
+	
+	public FightAll(Human[] humans, Monster[] monsters) {
 		this.humans = humans;
-		this.monster = monster;
+		this.monsters = monsters;
 	}
 
 	public void play() {
 		while (true) {
 			System.out.print("\n 1:戦う 2:逃げる 9:終了する 他:戦う > ");
 			int num = new Scanner(System.in).nextInt();
-			if (num == 2 || num == 9) {
-				break;
-			}
+			if (num == 2 || num == 9) { break; }
 			for (Human h : humans) {
 				System.out.println("\n" + h.getName() + "の攻撃");
-				h.attack(this.monster);
+				Monster m = selectMonster(monsters);
+				h.attack(m);
 			}
-			System.out.println("\n" + this.monster.getType() + "の攻撃");
-			Human h = selectHuman(humans);
-			this.monster.attack(h);
-			printStatus(monster, humans);
+			for (Monster m : monsters) {
+				System.out.println("\n" + m.getType() + "の攻撃");
+				Human h = selectHuman(humans);
+				m.attack(h);
+			}
+			printStatus(monsters, humans);
 		}
 		System.out.println("お疲れ様");
 	}
-
-	private void printStatus(Monster monster, Human[] humans) {
+	
+	private void printStatus(Monster[] monsters, Human[] humans) {
 		System.out.println();
-		System.out.println(monster);
+		for (Monster m : monsters) {
+			System.out.println(m);
+		}
 		for (Human h : humans) {
 			System.out.println(h);
 		}
 	}
-
+	
 	private Human selectHuman(Human[] humans) {
 		int num = new Random().nextInt(2);
 		return humans[num];
