@@ -12,6 +12,7 @@ public class Main {
 		// c.set(Calendar.MONTH, 9);
 		// System.out.println(c.getTime());
 		Date d = c.getTime();
+		long g = d.getTime();
 		System.out.println(d);
 		Date now = new Date();
 		c.setTime(now);
