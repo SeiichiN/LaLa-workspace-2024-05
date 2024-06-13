@@ -11,7 +11,7 @@ public class Main {
 		SimpleDateFormat f =
 				new SimpleDateFormat("yyyy/MM/dd");
 		// Date d = f.parse("2020/09/22 01:23:45");
-		Date d = f.parse("1985/6/1");
+		Date d = f.parse("1955/6/27");
 		System.out.println(d);
 		Calendar c = Calendar.getInstance();
 		c.setTime(d);
