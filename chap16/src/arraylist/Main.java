@@ -1,19 +1,20 @@
 package arraylist;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class Main {
 
 	public static void main(String[] args) {
-		LinkedList<Person> persons = new LinkedList<>();
-		persons.add(new Person("ミナト", 23, "男"));
-		persons.add(new Person("アサカ", 24, "女"));
-		persons.add(new Person("菅原", 34, "男"));
-		persons.remove(1);
-		for (Person p : persons) {
-			System.out.println(p);
+		List<Person> persons = new LinkedList<>();
+		persons.add(new Person("湊", 23, "男"));
+		persons.add(new Person("朝香", 24, "女"));
+		persons.add(new Person("かぐや姫", 20, "女"));
+		persons.add(new Person("菅原", 35, "男"));
+		persons.remove(2);
+		for (Person n : persons) {
+			System.out.println(n);
 		}
-
 	}
 
 }
