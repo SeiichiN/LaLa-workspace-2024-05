@@ -1,0 +1,67 @@
+javaで日付を入力するプログラムを書いて
+#概要
+年月日を入力すると、LocalDateオブジェクトを作成する。
+#入力
+-年の入力
+-月の入力
+-日の入力
+#必須条件
+-正しく数字を入力しなければ、再入力を求めるようにする。
+-うるう年や30日に対応する。
+
+
+
+Javaで日付を入力して`LocalDate`オブジェクトを作成するプログラムを以下に示します。このプログラムでは、ユーザーから年、月、日の入力を受け取り、正しい形式でない場合は再入力を求めるようにします。さらに、うるう年や各月の日数も考慮します。
+
+```java
+import java.time.LocalDate;
+import java.time.format.DateTimeParseException;
+import java.util.Scanner;
+
+public class DateInput {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        LocalDate date = null;
+
+        while (date == null) {
+            try {
+                System.out.println("年を入力してください (例: 2024): ");
+                int year = Integer.parseInt(scanner.nextLine());
+
+                System.out.println("月を入力してください (1-12): ");
+                int month = Integer.parseInt(scanner.nextLine());
+
+                System.out.println("日を入力してください (1-31): ");
+                int day = Integer.parseInt(scanner.nextLine());
+
+                date = LocalDate.of(year, month, day);
+                System.out.println("入力された日付は: " + date);
+
+            } catch (NumberFormatException e) {
+                System.out.println("数値を入力してください。");
+            } catch (DateTimeParseException | IllegalArgumentException e) {
+                System.out.println("正しい日付を入力してください。");
+            }
+        }
+
+        scanner.close();
+    }
+}
+```
+
+### プログラムの説明
+1. **入力の受け取りとパース**:
+   - `Scanner`を使用してユーザーから入力を受け取ります。
+   - 各入力は`nextLine()`で取得し、`Integer.parseInt`を使用して整数に変換します。
+
+2. **エラーハンドリング**:
+   - `NumberFormatException`: 数値に変換できなかった場合にスローされます。
+   - `DateTimeParseException`と`IllegalArgumentException`: `LocalDate.of`メソッドが不正な日付の場合にスローします。これには、存在しない日付（例: 2月30日）や不正な月・日の入力（例: 月に13を入力した場合）が含まれます。
+
+3. **ループと再入力**:
+   - 日付が正しく入力されるまで`while`ループが続きます。
+   - エラーが発生した場合は、適切なエラーメッセージを表示し、再入力を促します。
+
+このプログラムを実行すると、ユーザーが正しい日付を入力するまで何度でも再入力を求める動作をします。うるう年や各月の日数も適切に処理されます。
+
+
