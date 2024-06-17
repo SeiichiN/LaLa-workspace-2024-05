@@ -7,6 +7,7 @@ public class personTest {
 	public static void main(String[] args) {
 		DateUtil util = new DateUtil();
 		LocalDate date = util.inputDate();
+		System.out.println(date);
 		Person p = new Person();
 		p.setBirthday(date);
 		System.out.println(p.getAge());
