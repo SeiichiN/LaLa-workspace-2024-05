@@ -1,24 +1,24 @@
 package main2;
 
-import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Brain {
+public class Com {
 	private int num;
 	private int user;
 	
-	public Brain() {
+	public Com() {
 		this.setNum();
 	}
 	
-	public void inputNum() {
+	public void inputUser() {
+		Scanner scanner = new Scanner(System.in);
 		int num = -1;
 		do {
 			System.out.print("1...99の数を推測(0:終了) > ");
 			try {
-				num = new Scanner(System.in).nextInt();
-			} catch (InputMismatchException e) {
+				num = Integer.parseInt(scanner.nextLine());
+			} catch (NumberFormatException e) {
 				System.out.println("1〜99の数字を入力してください。");
 			}
 		} while(num < 0 || num > 99);

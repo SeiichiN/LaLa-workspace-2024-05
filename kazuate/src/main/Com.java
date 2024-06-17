@@ -2,10 +2,10 @@ package main;
 
 import java.util.Random;
 
-public class Brain {
+public class Com {
 	private int num;
 	
-	public Brain() {
+	public Com() {
 		this.setNum();
 	}
 	

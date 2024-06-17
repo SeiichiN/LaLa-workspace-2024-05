@@ -1,16 +1,13 @@
 package main2;
 
-import java.util.InputMismatchException;
-import java.util.Scanner;
-
 public class Main {
 
 	public static void main(String[] args) {
-		Brain brain = new Brain();
+		Com com = new Com();
 		while (true) {
-			brain.inputNum();
-			if (brain.getUser() == 0) { break; }
-			brain.guess();
+			com.inputUser();
+			if (com.getUser() == 0) { break; }
+			com.guess();
 		}
 		System.out.println("終了");
 	}

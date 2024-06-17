@@ -6,11 +6,11 @@ import java.util.Scanner;
 public class Main {
 
 	public static void main(String[] args) {
-		Brain brain = new Brain();
+		Com com = new Com();
 		while (true) {
 			int num = inputNum();
 			if (num == 0) { break; }
-			brain.guess(num);
+			com.guess(num);
 		}
 		System.out.println("終了");
 	}
